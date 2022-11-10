@@ -11,26 +11,26 @@ import realme from '../../../assets/images/Banners/realme-9-pro.webp';
 import fashionSale from '../../../assets/images/Banners/fashionsale.jpg';
 import oppo from '../../../assets/images/Banners/oppo-reno7.webp';
 
-
-export const PreviousBtn =({ className , onClick})=>{
-return (
+export const PreviousBtn = ({ className, onClick }) => {
+  return (
     <div className={className} onClick={onClick}>
-        <ArrowBackIosIcon />
+      <ArrowBackIosIcon />
     </div>
-)
-};
+  )
+}
 
-export const NextBtn =({ className , onClick }) =>{
-    return (
-        <div className={className} onClick={onClick}>
-            <ArrowForwardIosIcon />
-        </div>
-    )
-};
+export const NextBtn = ({ className, onClick }) => {
+  return (
+    <div className={className} onClick={onClick}>
+      <ArrowForwardIosIcon />
+    </div>
+  )
+}
 
-const Banner = () =>{
-    const settings ={
-        autoplay: true,
+const Banner = () => {
+
+  const settings = {
+    autoplay: true,
     autoplaySpeed: 2000,
     dots: false,
     infinite: true,
@@ -39,23 +39,21 @@ const Banner = () =>{
     slidesToScroll: 1,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
-    };
+  };
 
-    const banners = [gadgetSale , kitchenSale , poco , fashionSale , realme , oppo];
+  const banners = [gadgetSale, kitchenSale, poco, fashionSale, realme, oppo];
 
-    return (
-        <>
-            <section className='h-44 sm:h-72 w-full rounded-sm shadow relative overflow-hidden'>
-                <Slider {...settings}>
-                {banners.map((el, i) => (
-            <img draggable="false" className="h-44 sm:h-72 w-full object-cover" src={el} alt="banner" key={i}/>
-          ))};
-                </Slider>
-            </section>
-        </>
-    )
-
-
+  return (
+    <>
+      <section className="h-44 sm:h-72 w-full rounded-sm shadow relative overflow-hidden">
+        <Slider {...settings}>
+          {banners.map((el, i) => (
+            <img draggable="false" className="h-44 sm:h-72 w-full object-cover" src={el} alt="banner" key={i} />
+          ))}
+        </Slider>
+      </section>
+    </>
+  );
 };
 
 export default Banner;
