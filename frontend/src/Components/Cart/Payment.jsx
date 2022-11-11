@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PriceSidebar from "./PriceSidebar";
 import Stepper from "./Stepper";
+
+import 'react-toastify/dist/ReactToastify.css';
 // import {
 //     CardNumberElement,
 //     CardCvcElement,
@@ -18,10 +20,12 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import MetaData from "../Layouts/MetaData";
+import { emptyCart } from "../../actions/cartAction";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   // const stripe = useStripe();
   // const elements = useElements();
@@ -46,9 +50,23 @@ const Payment = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
-    // paymentBtn.current.disabled = true;
-    setPayDisable(true);
+    //   toast("PAyment SuccessFull",{
+      //     position: "top-right",
+      //   autoClose: 4000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+  //   pauseOnHover: true,
+  //   type:"success",
+  //   draggable: true,
+  //   progress: undefined,
+  //   theme: "dark",
+  // })
+  // paymentBtn.current.disabled = true;
+  setPayDisable(true);
+  if(totalPrice !== 0){
+    dispatch(emptyCart())
+    navigate("/orders/success")
+  }
 
     try {
       const config = {
@@ -135,6 +153,8 @@ const Payment = () => {
                         : "bg-primary-orange cursor-pointer"
                     } w-1/2 sm:w-1/4 my-2 py-3 font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none`}
                   />
+                  {/* <ToastContainer
+/> */}
                 </form>
 
                 {/* stripe form */}
