@@ -57,7 +57,7 @@ const UpdatePassword = () => {
 
     return (
         <>
-            <MetaData title="Password Update | Flipkart" />
+            <MetaData title="Password Update | The Mishra's" />
 
             {loading && <BackdropLoader />}
             <main className="w-full mt-12 sm:pt-20 sm:mt-0">

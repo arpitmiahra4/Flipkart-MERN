@@ -71,7 +71,7 @@ const UpdateProfile = () => {
 
     return (
         <>
-            <MetaData title="Update Profile | Flipkart" />
+            <MetaData title="Update Profile | The Mishra's" />
 
             {loading && <BackdropLoader />}
             <main className="w-full mt-12 sm:pt-20 sm:mt-0">

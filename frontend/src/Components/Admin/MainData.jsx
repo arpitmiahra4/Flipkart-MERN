@@ -97,7 +97,7 @@ const MainData = () => {
 
     return (
         <>
-            <MetaData title="Admin Dashboard | Flipkart" />
+            <MetaData title="Admin Dashboard | The Mishra's" />
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-6">
                 <div className="flex flex-col bg-purple-600 text-white gap-2 rounded-xl shadow-lg hover:shadow-xl p-6">

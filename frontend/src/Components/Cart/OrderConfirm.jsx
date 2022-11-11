@@ -13,7 +13,7 @@ const OrderConfirm = () => {
 
     return (
         <>
-        <MetaData title="Flipkart: Order Confirmation" />
+        <MetaData title="The Mishra's: Order Confirmation" />
 
         <main className="w-full mt-20">
 

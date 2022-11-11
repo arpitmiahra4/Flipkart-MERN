@@ -38,7 +38,7 @@ const Login = () => {
 
     return (
         <>
-            <MetaData title="Login | Flipkart" />
+            <MetaData title="Login | The Mishra's" />
 
             {loading && <BackdropLoader />}
             <main className="w-full mt-12 sm:pt-20 sm:mt-0">

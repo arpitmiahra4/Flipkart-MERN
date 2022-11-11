@@ -51,7 +51,7 @@ const ResetPassword = () => {
 
   return (
     <>
-      <MetaData title="Password Reset | Flipkart" />
+      <MetaData title="Password Reset | The Mishra's" />
 
       {loading && <BackdropLoader />}
       <main class="w-full mt-12 sm:pt-20 sm:mt-0">

@@ -161,7 +161,7 @@ const ProductTable = () => {
 
     return (
         <>
-            <MetaData title="Admin Products | Flipkart" />
+            <MetaData title="Admin Products | The Mishra's" />
 
             {loading && <BackdropLoader />}
 
