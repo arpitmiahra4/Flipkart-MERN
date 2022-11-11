@@ -46,7 +46,7 @@ const Login = () => {
                 {/* <!-- row --> */}
                 <div className="flex sm:w-4/6 sm:mt-4 m-auto mb-7 bg-white shadow-lg">
                     {/* <!-- sidebar column  --> */}
-                    <div className="loginSidebar bg-primary-blue p-10 pr-12 hidden sm:flex flex-col gap-4 w-2/5">
+                    <div className="loginSidebar bg-black p-10 pr-12 hidden sm:flex flex-col gap-4 w-2/5">
                         <h1 className="font-medium text-white text-3xl">To EnTeR <br/>***"The Mishra's"***<br/>LoGin NeeDeD</h1>
                         <p className="text-gray-200 text-lg">Get access to your Orders, Wishlist and Recommendations So please Do it....</p>
                     </div>

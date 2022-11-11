@@ -124,8 +124,8 @@ const OrderTable = () => {
 
             {loading && <BackdropLoader />}
 
-            <h1 className="text-lg font-medium uppercase">orders</h1>
-            <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470 }}>
+            <h1 className="text-lg font-medium ml-5 uppercase">orders</h1>
+            <div className="bg-white rounded-xl ml-2 shadow-lg w-full" style={{ height: 470 }}>
 
                 <DataGrid
                     rows={rows}
