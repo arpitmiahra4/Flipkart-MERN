@@ -38,6 +38,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "set \"GENERATE_SOURCEMAP=false\" &&  react-scripts build",
+    "predeploy" : "npm run build",
+"deploy" : "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
@@ -62,6 +64,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.15"
   }
