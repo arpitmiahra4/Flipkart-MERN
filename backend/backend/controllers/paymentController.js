@@ -41,7 +41,7 @@ exports.processPayment = asyncErrorHandler(async (req, res, next) => {
     params["CUST_ID"] = process.env.PAYTM_CUST_ID;
     params["TXN_AMOUNT"] = JSON.stringify(amount);
     // params["CALLBACK_URL"] = `${req.protocol}://${req.get("host")}/api/v1/callback`;
-    params["CALLBACK_URL"] = `https://${req.get("host")}/api/v1/callback`;
+    params["CALLBACK_URL"] = `http://${req.get("host")}/api/v1/callback`;
     params["EMAIL"] = email;
     params["MOBILE_NO"] = phoneNo;
 
@@ -116,8 +116,9 @@ exports.paytmResponse = (req, res, next) => {
                     // let status = body.resultInfo.resultStatus;
                     // res.json(body);
                     addPayment(body);
+                    res.redirect(`http://localhost:3000/orders/success`)
                     // res.redirect(`${req.protocol}://${req.get("host")}/order/${body.orderId}`)
-                    res.redirect(`https://${req.get("host")}/order/${body.orderId}`)
+                    // res.redirect(`https://${req.get("host")}/order/${body.orderId}`)
                 });
             });
 
@@ -144,16 +145,26 @@ exports.getPaymentStatus = asyncErrorHandler(async (req, res, next) => {
     const payment = await Payment.findOne({ orderId: req.params.id });
 
     if (!payment) {
-        return next(new ErrorHandler("Payment Details Not Found", 404));
+        // return next(new ErrorHandler("Payment Details Not Found", 404));
+    //     const txn = {
+    //         id: payment.txnId,
+    //         status: payment.resultInfo.resultStatus,
+    //     }
+    res.redirect(`http://localhost:3000/orders/successs`)
+    //     res.status(200).json({
+    //         success: true,
+    //         txn,
+    //     });
+    // }
+
+    // const txn = {
+    //     id: payment.txnId,
+    //     status: payment.resultInfo.resultStatus,
+    
     }
 
-    const txn = {
-        id: payment.txnId,
-        status: payment.resultInfo.resultStatus,
-    }
-
-    res.status(200).json({
-        success: true,
-        txn,
-    });
+    // res.status(200).json({
+    //     success: true,
+    //     txn,
+    // });
 });
