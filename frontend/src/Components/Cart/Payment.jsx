@@ -65,7 +65,7 @@ const Payment = () => {
   setPayDisable(true);
   if(totalPrice !== 0){
     dispatch(emptyCart())
-    navigate("/orders/success")
+    // navigate("/orders/success")
   }
 
     try {
