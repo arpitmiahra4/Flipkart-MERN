@@ -7,7 +7,7 @@ import failed from '../../assets/images/Transaction/failed.png';
 const OrderSuccess = ({ success }) => {
 
     const navigate = useNavigate();
-    const [time, setTime] = useState(3);
+    const [time, setTime] = useState(5);
 
     useEffect(() => {
         if (time === 0) {
