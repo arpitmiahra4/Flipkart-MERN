@@ -71,7 +71,7 @@ function App() {
   }, [pathname])
 
   // disable right click
-  window.addEventListener("contextmenu", (e) => e.preventDefault());
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
   window.addEventListener("keydown", (e) => {
     if (e.keyCode === 123) e.preventDefault();
     if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
@@ -91,7 +91,7 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />
-
+       
         {/* order process */}
         <Route path="/shipping" element={
           <ProtectedRoute>
@@ -237,8 +237,8 @@ function App() {
           </ProtectedRoute>
         } ></Route>
 
-        <Route path="*" element={<NotFound />}></Route>
-
+        {/* <Route path="*" element={<NotFound />}></Route> */}
+        <Route path="/*" element={<Home />} />
       </Routes>
       <Footer />
     </>
