@@ -70,13 +70,7 @@ function App() {
     });
   }, [pathname])
 
-  // disable right click
-  // window.addEventListener("contextmenu", (e) => e.preventDefault());
-  window.addEventListener("keydown", (e) => {
-    if (e.keyCode === 123) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
-  });
+ 
   
   return (
     <>
@@ -107,17 +101,12 @@ function App() {
 
         <Route path="/process/payment" element={
           <ProtectedRoute>
-            {/* // stripeApiKey && ( */}
-            {/* // <Elements stripe={loadStripe(stripeApiKey)}> */}
             <Payment />
-            {/* // </Elements> */}
-            {/* ) */}
           </ProtectedRoute>
         } ></Route>
 
         <Route path="/orders/success" element={<OrderSuccess success={true} />} />
         <Route path="/orders/failed" element={<OrderSuccess success={false} />} />
-        {/* order process */}
 
         <Route path="/order/:id" element={
           <ProtectedRoute>
@@ -237,7 +226,6 @@ function App() {
           </ProtectedRoute>
         } ></Route>
 
-        {/* <Route path="*" element={<NotFound />}></Route> */}
         <Route path="/*" element={<Home />} />
       </Routes>
       <Footer />

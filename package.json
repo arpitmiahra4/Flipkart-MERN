@@ -2,7 +2,7 @@
   "name": "ripe-receipt-7221",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:4000",
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
